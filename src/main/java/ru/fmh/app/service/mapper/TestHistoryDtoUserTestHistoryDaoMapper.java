@@ -1,9 +1,9 @@
 package ru.fmh.app.service.mapper;
 
-import org.springframework.stereotype.Component;
 import ru.fmh.app.common.Mapper;
 import ru.fmh.app.dao.TestUserHistoryDao;
 import ru.fmh.app.dto.TestUserHistoryDto;
+import org.springframework.stereotype.Component;
 
 @Component
 public class TestHistoryDtoUserTestHistoryDaoMapper implements Mapper<TestUserHistoryDto, TestUserHistoryDao> {
