@@ -1,4 +1,4 @@
-package com.example.demo.common;
+package ru.fmh.app.common;
 
 public interface Mapper<D, I> {
 

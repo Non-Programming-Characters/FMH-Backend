@@ -1,15 +1,15 @@
-package com.example.demo.service.test.impl;
+package ru.fmh.app.service.test.impl;
 
-import com.example.demo.common.Mapper;
-import com.example.demo.dao.TestUserHistoryDao;
-import com.example.demo.dto.TestUserHistoryDto;
-import com.example.demo.repository.UserTestHistoryRepository;
-import com.example.demo.service.test.TestService;
-import com.example.demo.service.test.UserTestHistoryService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
 import org.springframework.stereotype.Service;
+import ru.fmh.app.common.Mapper;
+import ru.fmh.app.dao.TestUserHistoryDao;
+import ru.fmh.app.dto.TestUserHistoryDto;
+import ru.fmh.app.repository.UserTestHistoryRepository;
+import ru.fmh.app.service.test.TestService;
+import ru.fmh.app.service.test.UserTestHistoryService;
 
 import java.time.Instant;
 import java.util.List;

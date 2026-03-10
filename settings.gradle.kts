@@ -1,1 +1,1 @@
-rootProject.name = 'fmh-backend-app'
+rootProject.name = "fmh-backend-app"
