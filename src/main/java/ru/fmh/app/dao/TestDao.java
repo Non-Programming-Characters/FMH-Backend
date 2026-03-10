@@ -1,4 +1,4 @@
-package com.example.demo.dao;
+package ru.fmh.app.dao;
 
 import jakarta.persistence.*;
 import lombok.*;

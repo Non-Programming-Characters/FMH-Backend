@@ -1,8 +1,8 @@
-package com.example.demo.service.mapper;
+package ru.fmh.app.service.mapper;
 
-import com.example.demo.common.Mapper;
-import com.example.demo.dao.TestDao;
-import com.example.demo.dto.TestDto;
+import ru.fmh.app.common.Mapper;
+import ru.fmh.app.dao.TestDao;
+import ru.fmh.app.dto.TestDto;
 import org.springframework.stereotype.Component;
 
 @Component

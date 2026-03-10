@@ -1,6 +1,6 @@
-package com.example.demo.service.test;
+package ru.fmh.app.service.test;
 
-import com.example.demo.dto.TestUserHistoryDto;
+import ru.fmh.app.dto.TestUserHistoryDto;
 
 import java.util.List;
 import java.util.UUID;

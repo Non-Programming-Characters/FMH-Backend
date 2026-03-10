@@ -1,10 +1,10 @@
-package com.example.demo.service.test.impl;
+package ru.fmh.app.service.test.impl;
 
-import com.example.demo.common.Mapper;
-import com.example.demo.dao.TestDao;
-import com.example.demo.dto.TestDto;
-import com.example.demo.repository.TestRepository;
-import com.example.demo.service.test.TestService;
+import ru.fmh.app.common.Mapper;
+import ru.fmh.app.dao.TestDao;
+import ru.fmh.app.dto.TestDto;
+import ru.fmh.app.repository.TestRepository;
+import ru.fmh.app.service.test.TestService;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;

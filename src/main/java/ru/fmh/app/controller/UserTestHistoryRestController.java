@@ -1,10 +1,10 @@
-package com.example.demo.controller;
+package ru.fmh.app.controller;
 
-import com.example.demo.controller.request.TestHistoryUploadRequest;
-import com.example.demo.controller.response.GetTestHistoryResponse;
-import com.example.demo.controller.response.TestHistoryUploadResponse;
-import com.example.demo.service.test.TestService;
-import com.example.demo.service.test.UserTestHistoryService;
+import ru.fmh.app.controller.request.TestHistoryUploadRequest;
+import ru.fmh.app.controller.response.GetTestHistoryResponse;
+import ru.fmh.app.controller.response.TestHistoryUploadResponse;
+import ru.fmh.app.service.test.TestService;
+import ru.fmh.app.service.test.UserTestHistoryService;
 import lombok.AccessLevel;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;

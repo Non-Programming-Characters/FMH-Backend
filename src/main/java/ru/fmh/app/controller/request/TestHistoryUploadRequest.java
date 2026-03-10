@@ -1,4 +1,4 @@
-package com.example.demo.controller.request;
+package ru.fmh.app.controller.request;
 
 import lombok.AccessLevel;
 import lombok.Getter;

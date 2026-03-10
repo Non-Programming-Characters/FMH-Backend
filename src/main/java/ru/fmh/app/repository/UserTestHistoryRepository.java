@@ -1,8 +1,6 @@
-package com.example.demo.repository;
+package ru.fmh.app.repository;
 
-import com.example.demo.UserTest;
-import com.example.demo.dao.TestUserHistoryDao;
-import com.example.demo.dto.TestUserHistoryDto;
+import ru.fmh.app.dao.TestUserHistoryDao;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

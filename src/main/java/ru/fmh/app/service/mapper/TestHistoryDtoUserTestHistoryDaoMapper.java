@@ -1,8 +1,8 @@
-package com.example.demo.service.mapper;
+package ru.fmh.app.service.mapper;
 
-import com.example.demo.common.Mapper;
-import com.example.demo.dao.TestUserHistoryDao;
-import com.example.demo.dto.TestUserHistoryDto;
+import ru.fmh.app.common.Mapper;
+import ru.fmh.app.dao.TestUserHistoryDao;
+import ru.fmh.app.dto.TestUserHistoryDto;
 import org.springframework.stereotype.Component;
 
 @Component
