@@ -11,7 +11,6 @@ import java.util.UUID;
 @Table(name = "tests")
 @Getter
 @Setter
-@RequiredArgsConstructor
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
 @Builder

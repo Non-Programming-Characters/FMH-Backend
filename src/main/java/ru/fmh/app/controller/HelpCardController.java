@@ -26,15 +26,16 @@ public class HelpCardController {
     @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<HelpCardResponse> createCard(@Valid @RequestBody HelpCardRequest request) {
         HelpCardDao card = new HelpCardDao();
-        card.setId(request.getId());
-        card.setTitle(request.getTitle());
-        card.setShortDesc(request.getShortDesc());
-        card.setFullDesc(request.getFullDesc());
-        card.setCategory(request.getCategory());
-        card.setSubcategory(request.getSubcategory());
-        card.setCreatedAt(request.getCreatedAt());
-
-        repository.save(card);
+        repository.save(
+                HelpCardDao.builder().id(request.getId())
+                        .title(request.getTitle())
+                        .shortDesc(request.getShortDesc())
+                        .fullDesc(request.getFullDesc())
+                        .category(request.getCategory())
+                        .subcategory(request.getSubcategory())
+                        .createdAt(request.getCreatedAt())
+                        .build()
+        );
 
         HelpCardResponse response = mapToResponse(card);
         return ResponseEntity.status(HttpStatus.CREATED).body(response);

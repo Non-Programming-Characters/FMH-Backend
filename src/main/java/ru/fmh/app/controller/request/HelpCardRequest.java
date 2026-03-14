@@ -1,5 +1,6 @@
 package ru.fmh.app.controller.request;
 
+import lombok.experimental.FieldDefaults;
 import ru.fmh.app.dao.CargoMainEventCategory;
 import ru.fmh.app.dao.SubEventCategory;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -7,29 +8,29 @@ import lombok.*;
 import jakarta.validation.constraints.NotNull;
 import java.util.UUID;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class HelpCardRequest {
 
     @NotNull
-    private UUID id;
+    UUID id;
 
     @NotNull
-    private String title;
+    String title;
 
     @JsonProperty("shortDesc")
-    private String shortDesc;
+    String shortDesc;
 
     @JsonProperty("fullDesc")
-    private String fullDesc;
+    String fullDesc;
 
     @NotNull
-    private CargoMainEventCategory category;
+    CargoMainEventCategory category;
 
-    private SubEventCategory subcategory;
+    SubEventCategory subcategory;
 
     @JsonProperty("createdAt")
     @NotNull
-    private String createdAt;
+    String createdAt;
 }

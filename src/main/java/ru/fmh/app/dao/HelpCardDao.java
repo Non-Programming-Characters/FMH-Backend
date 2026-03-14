@@ -1,5 +1,6 @@
 package ru.fmh.app.dao;
 
+import lombok.experimental.FieldDefaults;
 import ru.fmh.app.dao.CargoMainEventCategory;
 import ru.fmh.app.dao.SubEventCategory;
 import jakarta.persistence.*;
@@ -8,9 +9,12 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "help_cards")
-@Data
-@NoArgsConstructor
+@Getter
+@Setter
 @AllArgsConstructor
+@NoArgsConstructor(force = true)
+@Builder
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class HelpCardDao {
 
     @Id
@@ -38,5 +42,5 @@ public class HelpCardDao {
     private String sources;
 
     @Column(name = "created_at", nullable = false)
-    private String createdAt; // Формат DD-MM-YYYY
+    private String createdAt;
 }

@@ -1,29 +1,30 @@
 package ru.fmh.app.controller.response;
 
+import lombok.experimental.FieldDefaults;
 import ru.fmh.app.dao.CargoMainEventCategory;
 import ru.fmh.app.dao.SubEventCategory;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import java.util.UUID;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
+@Getter
+@RequiredArgsConstructor
+@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
 public class HelpCardResponse {
 
-    private UUID id;
-    private String title;
+    UUID id;
+    String title;
 
     @JsonProperty("shortDesc")
-    private String shortDesc;
+     String shortDesc;
 
     @JsonProperty("fullDesc")
-    private String fullDesc;
+    String fullDesc;
 
-    private CargoMainEventCategory category;
-    private SubEventCategory subcategory;
-    private String sources;
+    CargoMainEventCategory category;
+    SubEventCategory subcategory;
+    String sources;
 
     @JsonProperty("createdAt")
-    private String createdAt;
+    String createdAt;
 }
