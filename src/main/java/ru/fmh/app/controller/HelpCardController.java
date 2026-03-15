@@ -21,9 +21,7 @@ public class HelpCardController {
 
     private final HelpCardRepository repository;
 
-    // POST /api/v1/cards
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
     public ResponseEntity<HelpCardResponse> createCard(@Valid @RequestBody HelpCardRequest request) {
         HelpCardDao card = new HelpCardDao();
         repository.save(
@@ -37,43 +35,31 @@ public class HelpCardController {
                         .build()
         );
 
-        HelpCardResponse response = mapToResponse(card);
+        HelpCardResponse response = new HelpCardResponse(card.getId(), card.getTitle(), card.getShortDesc(), card.getFullDesc(),
+                card.getCategory(), card.getSubcategory(), card.getSources(), card.getCreatedAt());
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
-    // GET /api/v1/cards - Все карточки
     @GetMapping
     public ResponseEntity<List<HelpCardResponse>> getAllCards() {
         List<HelpCardDao> cards = repository.findAll();
         List<HelpCardResponse> response = cards.stream()
-                .map(this::mapToResponse)
+                .map(e -> new HelpCardResponse(e.getId(), e.getTitle(), e.getShortDesc(), e.getFullDesc(),
+                        e.getCategory(), e.getSubcategory(), e.getSources(), e.getCreatedAt())
+                )
                 .collect(Collectors.toList());
         return ResponseEntity.ok(response);
     }
 
-    // GET /api/v1/cards?category=ACCIDENT - Фильтрация по категории
-    @GetMapping(params = "category")
-    public ResponseEntity<List<HelpCardResponse>> getCardsByCategory(
-            @RequestParam CargoMainEventCategory category) {
+    @GetMapping(value = "/category")
+    public ResponseEntity<List<HelpCardResponse>> getCardsByCategory(@RequestParam("category") CargoMainEventCategory category) {
 
         List<HelpCardDao> cards = repository.findByCategory(category);
         List<HelpCardResponse> response = cards.stream()
-                .map(this::mapToResponse)
+                .map(e -> new HelpCardResponse(e.getId(), e.getTitle(), e.getShortDesc(), e.getFullDesc(),
+                        e.getCategory(), e.getSubcategory(), e.getSources(), e.getCreatedAt())
+                )
                 .collect(Collectors.toList());
         return ResponseEntity.ok(response);
-    }
-
-    // Маппинг Entity -> DTO
-    private HelpCardResponse mapToResponse(HelpCardDao card) {
-        return new HelpCardResponse(
-                card.getId(),
-                card.getTitle(),
-                card.getShortDesc(),
-                card.getFullDesc(),
-                card.getCategory(),
-                card.getSubcategory(),
-                card.getSources(),
-                card.getCreatedAt()
-        );
     }
 }

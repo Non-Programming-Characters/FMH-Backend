@@ -14,7 +14,7 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
 @Builder
-@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class TestDao {
 
     @Id
@@ -28,6 +28,11 @@ public class TestDao {
     @Column(name = "answer_mask", nullable = false)
     String answerMask;
 
-    @OneToMany(fetch = FetchType.LAZY)
+    @ElementCollection(fetch = FetchType.LAZY)
+    @CollectionTable(
+            name = "test_questions",
+            joinColumns = @JoinColumn(name = "test_id")
+    )
+    @Column(name = "question_text")
     List<String> questions;
 }

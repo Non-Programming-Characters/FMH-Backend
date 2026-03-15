@@ -40,7 +40,7 @@ public class UserTestHistoryServiceImpl implements UserTestHistoryService {
 
     @Override
     public List<TestUserHistoryDto> getAllTestHistoryByUserId(UUID userId) {
-        return userTestHistoryRepository.findAllByUserId(userId)
+        return userTestHistoryRepository.findAllByPassedUserId(userId)
                 .stream()
                 .map(mapper::mapToDomain)
                 .toList();

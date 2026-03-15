@@ -1,10 +1,10 @@
 package ru.fmh.app.dao;
 
 import lombok.experimental.FieldDefaults;
-import ru.fmh.app.dao.CargoMainEventCategory;
-import ru.fmh.app.dao.SubEventCategory;
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.time.Instant;
 import java.util.UUID;
 
 @Entity
@@ -14,33 +14,33 @@ import java.util.UUID;
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
 @Builder
-@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class HelpCardDao {
 
     @Id
     @Column(columnDefinition = "uuid")
-    private UUID id;
+    UUID id;
 
     @Column(nullable = false)
-    private String title;
+    String title;
 
     @Column(name = "short_desc", columnDefinition = "TEXT")
-    private String shortDesc;
+    String shortDesc;
 
     @Column(name = "full_desc", columnDefinition = "TEXT")
-    private String fullDesc;
+    String fullDesc;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private CargoMainEventCategory category;
+    CargoMainEventCategory category;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "subcategory")
-    private SubEventCategory subcategory;
+    SubEventCategory subcategory;
 
     @Column(nullable = false)
-    private String sources;
+    String sources;
 
     @Column(name = "created_at", nullable = false)
-    private String createdAt;
+    Instant createdAt;
 }

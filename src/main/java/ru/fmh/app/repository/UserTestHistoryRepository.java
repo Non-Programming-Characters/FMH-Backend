@@ -9,5 +9,5 @@ import java.util.UUID;
 
 @Repository
 public interface UserTestHistoryRepository extends JpaRepository<TestUserHistoryDao, UUID> {
-    List<TestUserHistoryDao> findAllByUserId(UUID userId);
+    List<TestUserHistoryDao> findAllByPassedUserId(UUID passedUserId);
 }

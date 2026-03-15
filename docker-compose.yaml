@@ -1,0 +1,31 @@
+services:
+  fmh-backend:
+    image: "fmh-backend:latest"
+    hostname: fmh-backend
+    env_file: .env
+    build:
+      dockerfile: Dockerfile
+    environment:
+      - spring.jpa.hibernate.ddl-auto=update
+      - spring.jpa.database-platform=org.hibernate.dialect.PostgreSQLDialect
+      - spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.PostgreSQLDialect
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15-alpine
+    hostname: fmh-postgres
+    restart: always
+    environment:
+      POSTGRES_URL: ${DATASOURCE_URL}
+      POSTGRES_DB: ${DATASOURCE_DB}
+      POSTGRES_USER: ${DATASOURCE_USERNAME}
+      POSTGRES_PASSWORD: ${DATASOURCE_PASSWORD}
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+
+volumes:
+  postgres_data:
+    driver: local

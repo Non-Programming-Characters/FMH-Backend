@@ -6,6 +6,8 @@ import ru.fmh.app.dao.SubEventCategory;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
 import jakarta.validation.constraints.NotNull;
+
+import java.time.Instant;
 import java.util.UUID;
 
 @Getter
@@ -32,5 +34,5 @@ public class HelpCardRequest {
 
     @JsonProperty("createdAt")
     @NotNull
-    String createdAt;
+    Instant createdAt;
 }

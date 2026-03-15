@@ -5,6 +5,8 @@ import ru.fmh.app.dao.CargoMainEventCategory;
 import ru.fmh.app.dao.SubEventCategory;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.*;
+
+import java.time.Instant;
 import java.util.UUID;
 
 @Getter
@@ -26,5 +28,5 @@ public class HelpCardResponse {
     String sources;
 
     @JsonProperty("createdAt")
-    String createdAt;
+    Instant createdAt;
 }

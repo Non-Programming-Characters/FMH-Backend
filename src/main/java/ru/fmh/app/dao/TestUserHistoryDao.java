@@ -8,14 +8,14 @@ import java.time.Instant;
 import java.util.UUID;
 
 @Entity
-@Table(name = "user_tests_history")
+@Table(name = "tests_history")
 @Getter
 @Setter
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
 @Builder
-@FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
+@FieldDefaults(level = AccessLevel.PRIVATE)
 public class TestUserHistoryDao {
 
     @Id
