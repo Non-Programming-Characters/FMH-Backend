@@ -2,7 +2,7 @@ package ru.fmh.app.service.test.impl;
 
 import ru.fmh.app.common.Mapper;
 import ru.fmh.app.dao.TestUserHistoryDao;
-import ru.fmh.app.dto.TestUserHistoryDto;
+import ru.fmh.app.dto.test.TestUserHistoryDto;
 import ru.fmh.app.repository.UserTestHistoryRepository;
 import ru.fmh.app.service.test.TestService;
 import ru.fmh.app.service.test.UserTestHistoryService;

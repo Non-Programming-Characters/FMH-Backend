@@ -1,4 +1,4 @@
-package ru.fmh.app.dto;
+package ru.fmh.app.dto.test;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;

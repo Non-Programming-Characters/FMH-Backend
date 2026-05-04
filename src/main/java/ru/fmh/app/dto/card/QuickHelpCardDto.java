@@ -1,10 +1,10 @@
-package ru.fmh.app.dto;
+package ru.fmh.app.dto.card;
 
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
 import java.time.Instant;
-import java.util.UUID;
 
 @Getter
 @Setter
@@ -13,15 +13,11 @@ import java.util.UUID;
 @NoArgsConstructor(force = true)
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class TestUserHistoryDto {
+public class QuickHelpCardDto {
 
-    UUID id;
+    @NotNull String title;
 
-    UUID testId;
+    @NotNull String shortDescription;
 
-    UUID passedUserId;
-
-    int result;
-
-    Instant createdAt;
+    @NotNull Instant createdAt;
 }

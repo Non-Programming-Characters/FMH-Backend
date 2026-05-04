@@ -3,7 +3,7 @@ package ru.fmh.app.service.mapper;
 import org.springframework.stereotype.Component;
 import ru.fmh.app.common.Mapper;
 import ru.fmh.app.dao.TestDao;
-import ru.fmh.app.dto.TestDto;
+import ru.fmh.app.dto.test.TestDto;
 
 @Component
 public class TestDaoTestDtoMapper implements Mapper<TestDto, TestDao> {

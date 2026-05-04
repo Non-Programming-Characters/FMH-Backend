@@ -2,7 +2,7 @@ package ru.fmh.app.service.mapper;
 
 import ru.fmh.app.common.Mapper;
 import ru.fmh.app.dao.TestUserHistoryDao;
-import ru.fmh.app.dto.TestUserHistoryDto;
+import ru.fmh.app.dto.test.TestUserHistoryDto;
 import org.springframework.stereotype.Component;
 
 @Component

@@ -1,4 +1,4 @@
-package ru.fmh.app.dto;
+package ru.fmh.app.dto.material;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -13,10 +13,13 @@ import java.util.UUID;
 @NoArgsConstructor(force = true)
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class UserDto {
-    UUID id;
+public class QuickMaterialDto {
 
-    String login;
+    @NonNull UUID id;
 
-    Instant createdAt;
+    @NonNull String title;
+
+    @NonNull String shortDescription;
+
+    @NonNull Instant createdAt;
 }

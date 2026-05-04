@@ -1,4 +1,4 @@
-package ru.fmh.app.dto;
+package ru.fmh.app.dto.test;
 
 import lombok.*;
 import lombok.experimental.FieldDefaults;
@@ -13,10 +13,15 @@ import java.util.UUID;
 @NoArgsConstructor(force = true)
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE, makeFinal = true)
-public class UserDto {
+public class TestUserHistoryDto {
+
     UUID id;
 
-    String login;
+    UUID testId;
+
+    UUID passedUserId;
+
+    int result;
 
     Instant createdAt;
 }

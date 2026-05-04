@@ -1,8 +1,8 @@
 package ru.fmh.app.dao;
 
-import lombok.experimental.FieldDefaults;
 import jakarta.persistence.*;
 import lombok.*;
+import lombok.experimental.FieldDefaults;
 
 import java.time.Instant;
 import java.util.UUID;
@@ -15,11 +15,11 @@ import java.util.UUID;
 @NoArgsConstructor(force = true)
 @Builder
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class HelpCardDao {
+public class MaterialDao {
 
     @Id
-    @Column(columnDefinition = "uuid")
-    UUID id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    @NonNull UUID id;
 
     @Column(nullable = false)
     String title;
@@ -30,15 +30,8 @@ public class HelpCardDao {
     @Column(name = "full_desc", nullable = false)
     String fullDescription;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    CargoMainEventCategory category;
-
     @Column(nullable = false)
     String sources;
-
-    @Column(name = "updated_at", nullable = false)
-    Instant updatedAt;
 
     @Column(name = "created_at", nullable = false)
     Instant createdAt;

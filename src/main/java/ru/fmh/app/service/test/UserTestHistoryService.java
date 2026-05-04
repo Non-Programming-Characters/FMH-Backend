@@ -1,6 +1,6 @@
 package ru.fmh.app.service.test;
 
-import ru.fmh.app.dto.TestUserHistoryDto;
+import ru.fmh.app.dto.test.TestUserHistoryDto;
 
 import java.util.List;
 import java.util.UUID;

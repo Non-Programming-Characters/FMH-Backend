@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+import java.time.Instant;
 import java.util.List;
 import java.util.UUID;
 
@@ -35,4 +36,7 @@ public class TestDao {
     )
     @Column(name = "question_text")
     List<String> questions;
+
+    @Column(name = "created_at", nullable = false)
+    Instant createdAt;
 }
