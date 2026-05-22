@@ -5,6 +5,7 @@ import lombok.Getter;
 @Getter
 public enum CargoMainEventCategory {
     ACCIDENT("ДТП"),
+    DANGEROUS("Повседневная опасность"),
     ROAD_HAZARD("Опасность на дороге"),
     INFRASTRUCTURE("Инфраструктура");
 

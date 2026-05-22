@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import lombok.experimental.FieldDefaults;
+import ru.fmh.app.dao.CargoMainEventCategory;
 
 @Getter
 @RequiredArgsConstructor
@@ -16,6 +17,8 @@ public class CreateMaterialRequest {
     @NonNull String shortDescription;
 
     @NonNull String fullDescription;
+
+    @NonNull CargoMainEventCategory cargoMainEventCategory;
 
     @NonNull String sources;
 }
