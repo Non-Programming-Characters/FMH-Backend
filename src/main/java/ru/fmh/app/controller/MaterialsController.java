@@ -24,7 +24,7 @@ public class MaterialsController {
     @NonNull
     MaterialService materialService;
 
-    @GetMapping(produces = "application/json")
+    @GetMapping(value = "/all", produces = "application/json")
     public ResponseEntity<List<MaterialDto>> getMaterials() {
         List<MaterialDto> materialsDto = materialService.getAllMaterials().stream().map(material ->
             new MaterialDto(
@@ -63,7 +63,7 @@ public class MaterialsController {
         ));
     }
 
-    @PostMapping(produces = "application/json")
+    @PostMapping(value = "/process", produces = "application/json")
     public ResponseEntity<MaterialDto> createMaterial(@RequestBody CreateMaterialRequest createMaterialRequest) {
         MaterialDao materialDao = materialService.createMaterial(
                 createMaterialRequest.getTitle(), createMaterialRequest.getShortDescription(),

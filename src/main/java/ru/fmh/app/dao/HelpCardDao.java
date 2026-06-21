@@ -18,16 +18,17 @@ import java.util.UUID;
 public class HelpCardDao {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
     @Column(columnDefinition = "uuid")
     UUID id;
 
     @Column(nullable = false)
     String title;
 
-    @Column(name = "short_desc", nullable = false)
+    @Column(name = "short_desc", length = 5000, nullable = false)
     String shortDescription;
 
-    @Column(name = "full_desc", nullable = false)
+    @Column(name = "full_desc", length = 5000, nullable = false)
     String fullDescription;
 
     @Enumerated(EnumType.STRING)

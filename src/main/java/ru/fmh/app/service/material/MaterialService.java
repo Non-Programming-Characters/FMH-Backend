@@ -22,6 +22,7 @@ public class MaterialService {
 
     public MaterialDao createMaterial(String title, String shortDesc, String fullDesc, String source) {
         MaterialDao preparedMaterialDao = MaterialDao.builder()
+                .id(UUID.randomUUID())
                 .title(title)
                 .shortDescription(shortDesc)
                 .fullDescription(fullDesc)

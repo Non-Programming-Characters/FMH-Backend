@@ -18,7 +18,7 @@ public class TestDto {
 
     String title;
 
-    List<String> questions;
+    String questions;
 
     /**
      * Структура:

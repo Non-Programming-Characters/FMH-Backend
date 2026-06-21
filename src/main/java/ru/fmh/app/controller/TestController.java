@@ -22,7 +22,7 @@ public class TestController {
 
     @NonNull TestService testService;
 
-    @GetMapping(path = "/api/v1/tests", produces = "application/json")
+    @GetMapping(produces = "application/json")
     public ResponseEntity<List<TestDto>> getTests() {
         List<TestDto> mappedTestDto = testService.getAllTests().stream().map(testDao -> new TestDto(
                 testDao.getId(),
@@ -45,7 +45,6 @@ public class TestController {
         return ResponseEntity.ok(mappedTestDto);
     }
 
-    // TODO: USER AUTH -> GET UUID CURRENT SESSION UUID USER
     @PostMapping(path = "/{testId}/submit", produces = "application/json")
     public ResponseEntity<?> submitTestResult(@PathVariable("testId") UUID testId, @RequestBody String answers) {
         testService.submitTest(UUID.randomUUID(), testId, answers);

@@ -8,7 +8,7 @@ import java.time.Instant;
 import java.util.UUID;
 
 @Entity
-@Table(name = "help_cards")
+@Table(name = "materials")
 @Getter
 @Setter
 @AllArgsConstructor

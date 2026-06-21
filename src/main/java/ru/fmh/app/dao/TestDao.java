@@ -29,13 +29,8 @@ public class TestDao {
     @Column(name = "answer_mask", nullable = false)
     String answerMask;
 
-    @ElementCollection(fetch = FetchType.LAZY)
-    @CollectionTable(
-            name = "test_questions",
-            joinColumns = @JoinColumn(name = "test_id")
-    )
-    @Column(name = "question_text")
-    List<String> questions;
+    @Column(name = "question_text", length = 5000)
+    String questions;
 
     @Column(name = "created_at", nullable = false)
     Instant createdAt;

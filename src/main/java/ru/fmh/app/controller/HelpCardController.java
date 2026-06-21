@@ -22,11 +22,9 @@ import java.util.stream.Collectors;
 public class HelpCardController {
 
     private final HelpCardService helpCardService;
-    private final TestService pdfGenerationService;
 
-
-    @PostMapping
-    public ResponseEntity<FullHelpCardResponse> createCard(@Valid @RequestBody CreateHelpCardRequest request) {
+    @PostMapping("/process")
+    public ResponseEntity<FullHelpCardResponse> createCard(@RequestBody CreateHelpCardRequest request) {
         HelpCardDao createdCardDao = helpCardService.createCard(
                 request.getTitle(),
                 request.getShortDescription(),
@@ -40,6 +38,8 @@ public class HelpCardController {
                 createdCardDao.getCategory(), createdCardDao.getSources(),
                 createdCardDao.getCreatedAt()
         );
+
+
         return ResponseEntity.status(HttpStatus.CREATED).body(response);
     }
 
@@ -66,7 +66,7 @@ public class HelpCardController {
     }
 
     @GetMapping
-    public ResponseEntity<List<FullHelpCardResponse>> getAllCardWithPagination(@RequestParam("page") int currentPage, @RequestParam(value = "size", defaultValue = "15", required = false) int size) {
+    public ResponseEntity<List<FullHelpCardResponse>> getAllCardWithPagination(@RequestParam(value = "page", defaultValue = "1", required = false) int currentPage, @RequestParam(value = "size", defaultValue = "15", required = false) int size) {
         List<HelpCardDao> cards = helpCardService.findCardsByPagination(currentPage, size);
         List<FullHelpCardResponse> response = cards.stream()
                 .map(e ->  new FullHelpCardResponse(

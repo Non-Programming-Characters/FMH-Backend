@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 public class HealthCheckController {
 
-    @GetMapping("/data")
+    @GetMapping("/check")
     public ResponseEntity<String> getData() {
-        return ResponseEntity.ok("Health check: 200. Test data");
+        return ResponseEntity.ok("Health check: 200");
     }
 }

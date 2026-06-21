@@ -15,7 +15,7 @@ public class CreateTestRequest {
 
     @NonNull  String title;
 
-    @NonNull List<String> questions;
+    @NonNull String questions;
 
     @NonNull String answerMask;
 }

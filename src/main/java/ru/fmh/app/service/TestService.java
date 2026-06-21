@@ -24,7 +24,7 @@ public class TestService {
     @NonNull TestRepository testRepository;
     @NonNull UserTestHistoryRepository userTestHistoryRepository;
 
-    public TestDao createTest(String title, List<String> questions, String answerMask) {
+    public TestDao createTest(String title, String questions, String answerMask) {
         TestDao preparedTestDao = TestDao.builder()
                                 .title(title)
                                 .questions(questions)

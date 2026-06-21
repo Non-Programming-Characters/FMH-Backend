@@ -25,8 +25,6 @@ public class ProfileController {
 
     @GetMapping(value = "/history/cards", produces = "application/json")
     public ResponseEntity<List<TestUserHistoryDto>> getUserFullHistory(@AuthenticationPrincipal Authentication authentication) {
-
-
         return ResponseEntity.ok().build();
     }
 }
